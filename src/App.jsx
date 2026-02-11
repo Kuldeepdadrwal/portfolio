@@ -27,7 +27,6 @@ export default function App() {
       <Projects />
       <Achievements />
       <Contact />
-      <Test />
       <Footer />
     </div>
   );
