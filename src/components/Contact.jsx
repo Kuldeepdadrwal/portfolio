@@ -58,10 +58,10 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="grid md:grid-cols-2 gap-6 bg-gray-900 p-10 rounded-2xl border border-gray-700"
           >
-            <input type="text" name="name" placeholder="Your Name" required className="p-4 rounded-lg bg-black border border-gray-700 focus:border-cyan-400 outline-none" />
-            <input type="email" name="email" placeholder="Your Email" required className="p-4 rounded-lg bg-black border border-gray-700 focus:border-cyan-400 outline-none" />
-            <input type="tel" name="phone" placeholder="Phone Number" required className="p-4 rounded-lg bg-black border border-gray-700 focus:border-cyan-400 outline-none" />
-            <input type="text" name="subject" placeholder="Subject" required className="p-4 rounded-lg bg-black border border-gray-700 focus:border-cyan-400 outline-none" />
+            <input type="text" name="name" placeholder="Your Name" required className="w-full p-4 rounded-lg bg-black border border-gray-700 focus:border-cyan-400 outline-none" />
+            <input type="email" name="email" placeholder="Your Email" required className="w-full p-4 rounded-lg bg-black border border-gray-700 focus:border-cyan-400 outline-none" />
+            <input type="tel" name="phone" placeholder="Phone Number" required className="w-full p-4 rounded-lg bg-black border border-gray-700 focus:border-cyan-400 outline-none" />
+            <input type="text" name="subject" placeholder="Subject" required className="w-full p-4 rounded-lg bg-black border border-gray-700 focus:border-cyan-400 outline-none" />
 
             <textarea name="message" rows="5" placeholder="Your Message" required className="md:col-span-2 p-4 rounded-lg bg-black border border-gray-700 focus:border-cyan-400 outline-none resize-none" />
 
