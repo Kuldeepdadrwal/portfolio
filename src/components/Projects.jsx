@@ -163,7 +163,7 @@ const Projects = () => {
 
                 <div className="mt-6 flex gap-4">
                   <a
-                    href="https://your-portfolio-link.com"
+                    href="https://portfolio-seven-xi-13.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-6 py-2 border border-green-500 text-green-400 rounded-lg hover:bg-green-500 hover:text-black transition"
