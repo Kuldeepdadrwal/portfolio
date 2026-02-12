@@ -131,7 +131,7 @@ const Projects = () => {
 
               <div className="text-left">
                 <a
-                  href="https://sumz-by-ai.netlify.app/"
+                  href="https://portfolio-seven-xi-13.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block text-2xl font-semibold mb-2 text-green-400 hover:underline hover:text-green-300 transition"
