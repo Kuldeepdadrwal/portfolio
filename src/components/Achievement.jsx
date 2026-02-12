@@ -18,11 +18,6 @@ const certificates = [
     image: dsaImg,
     pdf: dsaPdf,
   },
-  // {
-  //   title: "",
-  //   image: reactImg,
-  //   pdf: reactPdf,
-  // },
   {
     title: "",
     image: internshipImg,
