@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 import { FaChevronLeft, FaChevronRight, FaExternalLinkAlt } from "react-icons/fa";
 
 import dsaImg from "../assets/certificates/dsa.png";
-import reactImg from "../assets/certificates/react.png";
+// import reactImg from "../assets/certificates/react.png";
 import internshipImg from "../assets/certificates/internship.png";
 import aiImg from "../assets/certificates/ai.png";
 
 import dsaPdf from "../assets/certificates/dsa.pdf";
-import reactPdf from "../assets/certificates/react.pdf";
+// import reactPdf from "../assets/certificates/react.pdf";
 import internshipPdf from "../assets/certificates/internship.pdf";
 import aiPdf from "../assets/certificates/ai.pdf";
 
@@ -18,11 +18,11 @@ const certificates = [
     image: dsaImg,
     pdf: dsaPdf,
   },
-  {
-    title: "",
-    image: reactImg,
-    pdf: reactPdf,
-  },
+  // {
+  //   title: "",
+  //   image: reactImg,
+  //   pdf: reactPdf,
+  // },
   {
     title: "",
     image: internshipImg,
