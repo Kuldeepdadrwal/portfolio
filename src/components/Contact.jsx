@@ -1,46 +1,54 @@
 import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaRocket, FaCheckCircle, FaTimesCircle } from "react-icons/fa";
+import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 import { BsFillRocketFill } from "react-icons/bs";
-import rocketGif from "../assets/rocket-launch.gif";
 
 const Contact = () => {
-  const form = useRef();
+  const form = useRef(null);
   const [popup, setPopup] = useState({
     show: false,
     status: "sending", // sending | success | error
   });
 
-  const sendEmail = (e) => {
+  const sendMessage = async (e) => {
     e.preventDefault();
     setPopup({ show: true, status: "sending" });
 
-    emailjs
-      .sendForm(
-        "service_0ov5zvn",
-        "template_8qfp0sd",
-        form.current,
-        "8xU72QSUU6pdEMaGM"
-      )
-      .then(
-        () => {
-          setPopup({ show: true, status: "success" });
-          form.current.reset();
-          setTimeout(() => setPopup({ show: false, status: "sending" }), 2500);
+    const formData = new FormData(form.current);
+    const payload = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        () => {
-          setPopup({ show: true, status: "error" });
-          setTimeout(() => setPopup({ show: false, status: "sending" }), 2500);
-        }
-      );
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
+
+      setPopup({ show: true, status: "success" });
+      form.current.reset();
+      setTimeout(() => setPopup({ show: false, status: "sending" }), 2500);
+    } catch {
+      setPopup({ show: true, status: "error" });
+      setTimeout(() => setPopup({ show: false, status: "sending" }), 2500);
+    }
   };
 
   return (
     <>
       <section id="contact" className="bg-black text-white px-6">
         <div className="max-w-6xl mx-auto">
-
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -52,7 +60,7 @@ const Contact = () => {
 
           <motion.form
             ref={form}
-            onSubmit={sendEmail}
+            onSubmit={sendMessage}
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
@@ -66,13 +74,12 @@ const Contact = () => {
             <textarea name="message" rows="5" placeholder="Your Message" required className="md:col-span-2 p-4 rounded-lg bg-black border border-gray-700 focus:border-cyan-400 outline-none resize-none" />
 
             <button type="submit" className="md:col-span-2 py-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-semibold rounded-lg hover:scale-105 transition">
-              Send Message 🚀
+              Send Message
             </button>
           </motion.form>
         </div>
       </section>
 
-      {/* POPUP MODAL */}
       <AnimatePresence>
         {popup.show && (
           <motion.div
@@ -88,20 +95,17 @@ const Contact = () => {
               transition={{ type: "spring", stiffness: 200 }}
               className="w-[300px] h-[300px] rounded-2xl bg-gray-900 border border-gray-700 flex flex-col items-center justify-center relative overflow-hidden"
             >
-
-              {/* ROCKET LAUNCH */}
               {popup.status === "sending" && (
                 <motion.div
                   initial={{ y: 80 }}
                   animate={{ y: -120 }}
-                  transition={{ duration: 2}}
+                  transition={{ duration: 4 }}
                   className="text-cyan-400 text-[80px]"
                 >
                   <BsFillRocketFill />
                 </motion.div>
               )}
 
-              {/* SUCCESS */}
               {popup.status === "success" && (
                 <motion.div
                   initial={{ scale: 0 }}
@@ -110,13 +114,10 @@ const Contact = () => {
                   className="flex flex-col items-center gap-3"
                 >
                   <FaCheckCircle className="text-green-500 text-[90px]" />
-                  <p className="text-lg text-green-400 font-semibold text-center">
-                    Message Sent Successfully 🚀
-                  </p>
+                  <p className="text-lg text-green-400 font-semibold text-center">Message sent successfully.</p>
                 </motion.div>
               )}
 
-              {/* ERROR */}
               {popup.status === "error" && (
                 <motion.div
                   initial={{ scale: 0 }}
@@ -125,12 +126,9 @@ const Contact = () => {
                   className="flex flex-col items-center gap-3"
                 >
                   <FaTimesCircle className="text-red-500 text-[90px]" />
-                  <p className="text-lg text-red-400 font-semibold text-center">
-                    Failed To Send Message ❌
-                  </p>
+                  <p className="text-lg text-red-400 font-semibold text-center">Failed to send message.</p>
                 </motion.div>
               )}
-
             </motion.div>
           </motion.div>
         )}
