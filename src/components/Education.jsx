@@ -19,7 +19,7 @@ const Education = () => {
               B.Tech — Electronics & Communication Engineering
             </p>
             <p className="text-gray-400 mt-2">
-              2021 – 2025
+              2020 – 2024
             </p>
             <p className="mt-3 text-gray-300">
               Focused on Data Structures, Algorithms, Web Development, Core ECE subjects, and Software Engineering.
@@ -28,24 +28,11 @@ const Education = () => {
 
           {/* 12th */}
           <div className="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-cyan-400 transition">
-            <h3 className="text-2xl font-semibold">
-              Senior Secondary (Class XII)
+           <h3 className="text-2xl font-semibold">
+              Rajat Vidyapeeth Sr. Secondary School Jat Colony Nawalgarh Road, Sikar
             </h3>
             <p className="text-cyan-400 mt-1">
-              Science Stream — CBSE / RBSE
-            </p>
-            <p className="text-gray-400 mt-2">
-              2020 – 2021
-            </p>
-          </div>
-
-          {/* 10th */}
-          <div className="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-cyan-400 transition">
-            <h3 className="text-2xl font-semibold">
-              Secondary (Class X)
-            </h3>
-            <p className="text-cyan-400 mt-1">
-              CBSE / RBSE
+              Class XII | 88.6%
             </p>
             <p className="text-gray-400 mt-2">
               2018 – 2019
