@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import healthcareImg from "../assets/project-healthcare.png";
 import iskconImg from "../assets/project-iskcon.png";
 import portfolio from "../assets/portfolio.png";
+import summarizer from "../assets/summarizer.png";
 
 const Projects = () => {
   return (
@@ -81,21 +82,19 @@ const Projects = () => {
 
               <div className="text-left">
                 <h3 className="text-2xl font-semibold mb-2 text-purple-400">
-                  ISKCON Virar — Official Website Design & Deployment
+                  GPT-Powered Article Summarizer
                 </h3>
 
                 <p className="text-gray-300 mb-6 leading-relaxed">
-                  Designed, developed, and deployed a production-grade WordPress website with
-                  focus on responsive UI, performance optimization, security hardening, and SEO
-                  best practices delivering a fast, secure, and scalable platform.
+                  A smart web-based application that automatically generates concise and meaningful summaries of long articles using GPT-based AI models. Users can simply provide an article URL, and the system fetches the content, processes it using natural language understanding, and delivers a clear, accurate, and easy-to-read summary within seconds.
                 </p>
 
                 <ul className="space-y-3 text-gray-300 mb-6">
-                  <li>• Custom responsive UI & dynamic page layouts</li>
-                  <li>• Performance optimization using caching & compression</li>
-                  <li>• SEO optimization & structured content</li>
-                  <li>• Security hardening & automated backup systems</li>
-                  <li>• Hosting, deployment, maintenance & version upgrades</li>
+                  <li>• Accepts article URLs as input</li>
+                  <li>• Automatically extracts content from web articles</li>
+                  <li>• GPT-powered intelligent summarization</li>
+                  <li>• Clean, concise & meaningful summaries</li>
+                  <li>• Fast processing with optimized performance</li>
                 </ul>
 
                 <div className="flex flex-wrap gap-3">
@@ -106,7 +105,7 @@ const Projects = () => {
                   ))}
                 </div>
                 <a
-                  href="https://iskconvirar.com"
+                  href="https://sumz-by-ai.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block mt-6 px-6 py-2 border border-purple-500 text-purple-400 rounded-lg hover:bg-purple-500 hover:text-black transition"
@@ -116,7 +115,7 @@ const Projects = () => {
               </div>
 
               <div className="flex justify-center">
-                <img src={iskconImg} alt="ISKCON Virar Website" className="rounded-xl shadow-lg hover:scale-105 transition duration-300 max-h-[320px]" />
+                <img src={summarizer} alt="ISKCON Virar Website" className="rounded-xl shadow-lg hover:scale-105 transition duration-300 max-h-[320px]" />
               </div>
             </div>
           </motion.div>
@@ -132,7 +131,7 @@ const Projects = () => {
 
               <div className="text-left">
                 <a
-                  href="https://your-portfolio-link.com"
+                  href="https://sumz-by-ai.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block text-2xl font-semibold mb-2 text-green-400 hover:underline hover:text-green-300 transition"
